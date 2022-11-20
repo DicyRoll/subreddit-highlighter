@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link rel="stylesheet" href="./popup.css" />
+</head>
+
+<input type="checkbox" id="help-modal" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box mx-8">
+    <h2 class="font-bold text-xl text-center">Help!</h2>
+    <ul class="mx-4 mt-2 list-disc text-sm">
+      <li>To specify a subreddit to highlight you only need to enter the subreddit name without the "r/", the field is
+        case insensitive
+      </li>
+      <li>After applying the changes reload your reddit page and enjoy</li>
+    </ul>
+    <div class="modal-action">
+      <label for="help-modal" class="btn">Got it</label>
+    </div>
+  </div>
+</div>
+
+<body>
+  <div class="absolute flex flex-col h-full w-full">
+    <div class="relative card bg-base-card h-full inset-x-0 top-0 mt-4 mx-4 pt-2 overflow-hidden">
+      <div class="h-12">
+        <div class="grid grid-cols-4 justify-items-center">
+          <div class="tooltip tooltip-right" data-tip="Help">
+            <label for="help-modal" id="help-btn" class="btn btn-ghost">
+              <span class="material-symbols-rounded">
+                help
+              </span>
+            </label>
+          </div>
+
+          <div class="col-span-2 flex items-center">
+            <h2 class="card-title">Subreddit List</h2>
+          </div>
+
+          <div class="tooltip tooltip-left" data-tip="Undo">
+            <button id="undo-btn" class="btn btn-ghost">
+              <span class="material-symbols-rounded">
+                undo
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="subreddit-list" class="flex flex-col h-80 pt-4 space-y-3 overflow-y-auto">
+      </div>
+    </div>
+
+    <div class="relative flex justify-center space-x-4 insert-x-0 bottom-0 w-full h-16 my-4">
+      <div class="tooltip tooltip-primary" data-tip="Add Subreddit">
+        <button id="add-subreddit-btn" class="btn btn-primary w-16 shadow-md">
+          <span class="material-symbols-rounded">
+            add_circle
+          </span>
+        </button>
+      </div>
+
+      <div class="tooltip-success tooltip-open" data-tip="Saved!">
+        <button id="save-subreddits" class="btn btn-primary shadow-md w-16 hover:btn-success">
+          <label class="swap">
+            <input id="save-checkbox" type="checkbox" />
+
+            <div class="swap-on">
+              <span class="material-symbols-rounded">done</span>
+            </div>
+
+            <div class="flex items-center swap-off">
+              Save
+            </div>
+          </label>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="template-subreddit-input" class="subreddit-input-group justify-evenly items-center hidden">
+    <input type="text" placeholder="Subreddit name" class="subreddit-name input input-secondary">
+    <div class="w-8 h-8 overflow-hidden rounded-full">
+      <input type="color" class="subreddit-color">
+    </div>
+
+    <button id="delete-btn" class="delete-input-group btn btn-outline hover:btn-error">
+      <span class="material-symbols-rounded">
+        delete
+      </span>
+    </button>
+  </div>
+  <script src="./popup.js" type="module"></script>
+</body>
+
+
+</html>

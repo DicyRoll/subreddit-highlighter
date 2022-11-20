@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Subreddit Highlighter",
+  "version": "1.0",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "highlight.js"
+      ],
+      "matches": [
+        "https://www.reddit.com/"
+      ]
+    }
+  ]
+}
