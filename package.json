@@ -1,12 +1,12 @@
 {
   "name": "subreddit-highlighter",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
     "prebuild": "rm -rf ./dist/* ./.parcel-cache",
     "build:tailwind": "tailwindcss build -i ./src/popup.css -c ./tailwind.config.js -o ./dist/popup.css",
-    "watch": "NODE_ENV=development npm run build:tailwind && cp ./src/manifest.json ./dist/ && parcel watch --no-hmr ./src/{popup.html,popup.js,highlight.js}",
-    "build": "NODE_ENV=production npm run build:tailwind && cp ./src/manifest.json ./dist/ && parcel build ./src/{popup.html,popup.js,highlight.js}",
+    "copy-res": "cp ./src/manifest.json ./dist/ && cp -r ./images/ ./dist/",
+    "watch": "NODE_ENV=development npm run build:tailwind && npm run copy-res && parcel watch --no-hmr ./src/{popup.html,popup.js,highlight.js}",
+    "build": "NODE_ENV=production npm run build:tailwind && npm run copy-res && parcel build ./src/{popup.html,popup.js,highlight.js}",
     "zip": "zip -r chrome-extension.zip ./dist"
   },
   "keywords": [],
