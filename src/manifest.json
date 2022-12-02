@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Subreddit Highlighter",
-  "version": "1.0",
+  "description": "Subreddit Highlighter is the extension that highlights posts from subreddits of your chosing.",
+  "version": "0.0.1",
   "permissions": [
     "storage"
   ],
