@@ -26,7 +26,7 @@ Developed with Tailwind CSS and Parcel.
 
 ### Chrome Web Store
 
-You can install the extension from the [Chrome Web Store]()!
+You can install the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/subreddit-highlighter/hjglfolicmjjpokbhnlgheghijbpoapi)!
 
 ### Manual Installation
 
